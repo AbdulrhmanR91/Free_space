@@ -22,8 +22,10 @@
 .beta-label{display:inline-block;margin-inline-start:8px;padding:1px 7px;border:1px solid var(--mg);border-radius:999px;background:var(--acb);color:var(--ac);font:600 10px 'Cairo',sans-serif;line-height:1.6;vertical-align:middle;white-space:nowrap}
 .notebook-title{display:flex;align-items:center;gap:4px}
 .notebook-title .beta-label{margin-inline-start:0}
+.home-beta-label{font-size:9px;padding:1px 6px;line-height:1.5}
 
 @media(max-width:600px){
   .beta-label{margin-inline-start:6px;padding:0 5px;font-size:9px;line-height:1.5}
   .notebook-title{gap:3px}
+  .logo .home-beta-label{margin-inline-start:5px;padding:0 4px;font-size:8px;line-height:1.4}
 }
