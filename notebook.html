@@ -17,13 +17,20 @@
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><b id="mon"></b><span id="sum"></span></div>
-  <div class="tools"><a class="btn g home-link" href="index.html">🏠 الرئيسية</a><a class="btn g" href="board.html">🗂 اللوحة</a><button class="btn g" data-m="shelf">📚 الرف</button><button class="btn g" data-m="album">🖼 الألبوم</button><button class="btn g" data-export>إنشاء نسخة احتياطية</button><button class="btn g" data-import>استيراد</button><details class="tool-menu"><summary class="btn g">⚙ المزيد</summary><div class="tool-menu-body"><button class="btn g" id="sfxb">🔊 مؤثرات</button><button class="btn g" id="rainb">🌧 مطر</button><button class="btn g" id="seab">🌊 بحر</button><button class="btn g" id="forestb">🌲 غابة</button><button class="btn g" id="birdsb">🐦 طيور</button><button class="btn g" data-m="setp">⚙ تخصيص</button><button class="btn g" data-theme-toggle data-theme-text="الوضع" type="button">🌙 الوضع</button></div></details></div>
+  <div class="top"><div><b id="mon"></b><span id="sum"></span><span id="save-status" role="status" aria-live="polite"></span></div></div>
+  <div class="tools">
+    <a class="btn g home-link" href="index.html">🏠 الرئيسية</a>
+    <button class="btn g" data-m="shelf">📚 الرف</button>
+    <button class="btn g" id="focus-toggle" type="button">⛶ وضع التركيز</button>
+    <details class="tool-menu"><summary class="btn g">⚙ المزيد</summary><div class="tool-menu-body"><a class="btn g" href="board.html">🗂 اللوحة</a><button class="btn g" data-m="impact">📈 أثر الشهر</button><button class="btn g" data-export>تصدير بياناتي</button><button class="btn g" data-import>استيراد بياناتي</button><span class="transfer-status" data-transfer-status></span><button class="btn g" data-m="setp">⚙ تخصيص</button><button class="btn g" data-theme-toggle data-theme-text="الوضع" type="button">🌙 الوضع</button></div></details>
+  </div>
+  <details class="sound-menu"><summary class="btn g">🔊 الأصوات</summary><div class="sound-tools" aria-label="أدوات الصوت"><button class="btn g" id="sfxb">🔊 المؤثرات</button><button class="btn g" id="rainb">🌧 مطر</button><button class="btn g" id="seab">🌊 بحر</button><button class="btn g" id="forestb">🌲 غابة</button><button class="btn g" id="birdsb">🐦 طيور</button></div></details>
   <div class="hint center-hint" id="pr"></div>
   <div class="page" id="page"></div>
   <div class="nav"><button class="btn g" id="pv">→ السابقة</button><button class="btn g" id="nx">التالية ←</button></div>
   <div class="dots" id="dots"></div>
   <div id="sh" hidden></div>
+  <button id="focus-exit" class="focus-exit" type="button" hidden>الخروج من وضع التركيز</button>
 </div>
 <script src="assets/js/data-transfer.js"></script><script src="assets/js/notebook.js"></script><script src="assets/js/pwa.js"></script>
 </body>

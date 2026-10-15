@@ -1,4 +1,4 @@
-const CACHE='free-space-pwa-v1';
+const CACHE='free-space-pwa-v2';
 const CORE=[
   './',
   './index.html',
@@ -26,13 +26,18 @@ self.addEventListener('activate',event=>{
 });
 self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET')return;
-  event.respondWith(caches.match(event.request).then(cached=>{
-    const network=fetch(event.request).then(response=>{
+  event.respondWith((async()=>{
+    const cached=await caches.match(event.request);
+    try{
+      const response=await fetch(event.request);
       if(response.ok&&new URL(event.request.url).origin===self.location.origin){
         const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));
       }
       return response;
-    }).catch(()=>cached||caches.match('./index.html'));
-    return cached||network;
-  }));
+    }catch(error){
+      if(cached)return cached;
+      if(event.request.mode==='navigate')return caches.match('./index.html');
+      throw error;
+    }
+  })());
 });

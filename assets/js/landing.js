@@ -7,6 +7,7 @@ try{
  const resume=document.getElementById('resume'),hasBoard=board&&Array.isArray(board.board)&&board.board.length>0,hasBook=book&&book.seen;
  if(resume&&(hasBoard||hasBook)){
   resume.hidden=false;
-  resume.innerHTML=`<span>رجعت تاني؟</span><a href="${hasBoard?'board.html':'notebook.html'}">${hasBoard?'كمّل من اللوحة':'كمّل كراسة اليوم'} ←</a>`;
+  resume.classList.add('resume-card');
+  resume.innerHTML=`<span><b>مرحبًا بعودتك</b><small>${hasBoard?'لديك أفكار محفوظة في مساحة الأفكار':'لديك كراسة يومية جاهزة للمتابعة'}</small></span><a class="btn g" href="${hasBoard?'board.html':'notebook.html'}">${hasBoard?'تابع من مساحة الأفكار':'تابع كراسة اليوم'} ←</a>`;
  }
 }catch(e){}
