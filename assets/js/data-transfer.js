@@ -13,7 +13,9 @@
  const count=payload=>[Array.isArray(payload.board?.board)?payload.board.board.length:0,Object.keys(payload.book||{}).filter(k=>/^\d{4}-\d{2}-\d{2}$/.test(k)).length];
  function exportData(){
   const payload={app:'free-space',version:1,exportedAt:new Date().toISOString(),board:read(boardKey,{}),book:cleanBook(read(bookKey,{})),theme:localStorage.getItem(themeKey)||'light'};
-  const date=new Date().toISOString().slice(0,10),url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download=`free-space-backup-${date}.json`;a.click();URL.revokeObjectURL(url);
+  const date=new Date().toISOString().slice(0,10),url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'})),a=document.createElement('a');
+  a.href=url;a.download=`free-space-backup-${date}.json`;a.hidden=true;document.body.appendChild(a);a.click();
+  setTimeout(()=>{URL.revokeObjectURL(url);a.remove()},1000);
  }
  function valid(payload){
   return payload&&payload.app==='free-space'&&payload.version===1&&payload.board&&typeof payload.board==='object'&&payload.book&&typeof payload.book==='object'&&(!payload.theme||payload.theme==='light'||payload.theme==='dark')&&JSON.stringify(payload).length<=5*1024*1024;
