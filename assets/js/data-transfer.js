@@ -24,7 +24,7 @@
   setTimeout(()=>{URL.revokeObjectURL(url);a.remove()},10000);
  }
  function valid(payload){
-  if(!payload||payload.app!=='free-space'||payload.version!==1||!payload.board||typeof payload.board!=='object'||!payload.book||typeof payload.book!=='object'||(!payload.theme||payload.theme==='light'||payload.theme==='dark'))return false;
+  if(!payload||payload.app!=='free-space'||payload.version!==1||!payload.board||typeof payload.board!=='object'||!payload.book||typeof payload.book!=='object'||!['light','dark'].includes(payload.theme))return false;
   if(!Array.isArray(payload.board.board)||!Array.isArray(payload.board.archivedBoard))return false;
   const validItem=x=>x&&typeof x==='object'&&typeof x.id==='string'&&x.id.length<=200&&['sticky','text','link'].includes(x.type)&&typeof x.value==='string'&&x.value.length<=10000&&Number.isFinite(Number(x.x))&&Number.isFinite(Number(x.y));
   if(!payload.board.board.every(validItem)||!payload.board.archivedBoard.every(validItem))return false;
