@@ -8,10 +8,10 @@
    - عنوان الإنتاج، مثل `https://example.com`
    - عنوان التطوير، مثل `http://localhost:3000`
 4. فعّل Email provider لاستخدام رابط الدخول السحري.
-5. تسجيل الدخول في الواجهة يعتمد على رابط البريد السحري.
+5. تسجيل الدخول في الواجهة يعتمد على البريد وكلمة المرور. فعّل تأكيد البريد من إعدادات Auth إذا أردت إلزام المستخدم بتأكيده.
 6. راجع اختبارات العزل في [supabase/tests/rls.sql](./supabase/tests/rls.sql). استبدل UUIDs بمستخدمين تجريبيين فقط قبل تشغيلها عبر عميل PostgreSQL يدعم متغيرات `psql`.
 
-العميل يستخدم الإصدار المثبت صراحة `@supabase/supabase-js@2.45.4` من CDN. المفتاح الموجود في [assets/js/config.js](./assets/js/config.js) publishable فقط، ولا تضع `service_role` في المشروع.
+العميل يستخدم الإصدار المثبت صراحة `@supabase/supabase-js@2.45.4` من CDN. المفتاح الموجود في [assets/js/config.js](./assets/js/config.js) publishable فقط، ولا تضع `service_role` في المشروع. كلمات المرور تديرها Supabase Auth ولا يخزنها التطبيق كنص واضح.
 
 ## الحالة الحالية
 
