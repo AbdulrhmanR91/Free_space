@@ -7,11 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/notebook.css">
 <link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/auth.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/js/config.js"></script>
 <script src="assets/js/theme.js"></script>
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><b id="mon"></b><span id="sum"></span></div>
+  <div class="top"><b id="mon"></b><span id="sum"></span><div id="auth-area" class="auth-area"></div></div>
   <div class="tools"><a class="btn g home-link" href="index.html">🏠 الرئيسية</a><a class="btn g" href="board.html">🗂 اللوحة</a><button class="btn g" data-m="shelf">📚 الرف</button><button class="btn g" data-m="album">🖼 الألبوم</button><button class="btn g" data-export>تصدير بياناتي</button><button class="btn g" data-import>استيراد</button><details class="tool-menu"><summary class="btn g">⚙ المزيد</summary><div class="tool-menu-body"><button class="btn g" id="sfxb">🔊 مؤثرات</button><button class="btn g" id="rainb">🌧 مطر</button><button class="btn g" data-m="setp">⚙ تخصيص</button><button class="btn g" data-theme-toggle data-theme-text="الوضع" type="button">🌙 الوضع</button></div></details></div>
   <div class="hint center-hint" id="pr"></div>
   <div class="page" id="page"></div>
@@ -19,6 +22,6 @@
   <div class="dots" id="dots"></div>
   <div id="sh" hidden></div>
 </div>
-<script src="assets/js/data-transfer.js"></script><script src="assets/js/notebook.js"></script>
+<script src="assets/js/data-transfer.js"></script><script src="assets/js/notebook.js"></script><script src="assets/js/auth.js"></script>
 </body>
 </html>

@@ -7,13 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/board.css">
 <link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/auth.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/js/config.js"></script>
 <script src="assets/js/theme.js"></script>
 </head>
 <body>
 <div class="w">
 <header class="board-head">
   <div><h1>مساحة الأفكار</h1><small id="dt">مكتب مفتوح للأفكار والروابط، حرّكه على طريقتك</small></div>
-  <div class="header-actions"><a class="home-link" href="index.html">🏠 البداية</a><a class="home-link" href="notebook.html">📓 الكراسة</a><button class="home-link" data-export type="button">تصدير بياناتي</button><button class="home-link" data-import type="button">استيراد</button><button class="tg" data-theme-toggle type="button">🌙</button></div>
+  <div class="header-actions"><a class="home-link" href="index.html">🏠 البداية</a><a class="home-link" href="notebook.html">📓 الكراسة</a><button class="home-link" data-export type="button">تصدير بياناتي</button><button class="home-link" data-import type="button">استيراد</button><button class="tg" data-theme-toggle type="button">🌙</button><div id="auth-area" class="auth-area"></div></div>
 </header>
 <div class="notebook-layout">
   <aside class="tabs" aria-label="أقسام اللوحة">
@@ -23,6 +26,6 @@
   </aside>
   <main id="app" class="paper"></main>
 </div>
-<script src="assets/js/data-transfer.js"></script><script src="assets/js/board.js"></script>
+<script src="assets/js/data-transfer.js"></script><script src="assets/js/board.js"></script><script src="assets/js/auth.js"></script>
 </body>
 </html>
