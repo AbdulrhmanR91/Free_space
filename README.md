@@ -8,7 +8,7 @@
    - عنوان الإنتاج، مثل `https://example.com`
    - عنوان التطوير، مثل `http://localhost:3000`
 4. فعّل Email provider لاستخدام رابط الدخول السحري.
-5. Google اختياري: فعّل Google provider، أضف بيانات OAuth من Google Cloud، وأضف redirect URL الخاص بـ Supabase الظاهر في إعدادات Authentication. زر Google موجود في الواجهة، لكنه لن يعمل قبل تفعيل المزود.
+5. تسجيل الدخول في الواجهة يعتمد على رابط البريد السحري.
 6. راجع اختبارات العزل في [supabase/tests/rls.sql](./supabase/tests/rls.sql). استبدل UUIDs بمستخدمين تجريبيين فقط قبل تشغيلها عبر عميل PostgreSQL يدعم متغيرات `psql`.
 
 العميل يستخدم الإصدار المثبت صراحة `@supabase/supabase-js@2.45.4` من CDN. المفتاح الموجود في [assets/js/config.js](./assets/js/config.js) publishable فقط، ولا تضع `service_role` في المشروع.
