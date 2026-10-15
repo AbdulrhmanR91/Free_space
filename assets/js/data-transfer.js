@@ -45,7 +45,7 @@
  }
  document.addEventListener('click',e=>{
   const button=e.target.closest('[data-export],[data-import]');if(!button)return;
-  if(button.dataset.export){exportData();return}
+  if(button.hasAttribute('data-export')){exportData();return}
   const input=document.createElement('input');input.type='file';input.accept='application/json,.json';input.onchange=()=>{if(input.files[0])importData(input.files[0])};input.click();
  });
 })();
