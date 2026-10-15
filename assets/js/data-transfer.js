@@ -13,9 +13,13 @@
  const count=payload=>[Array.isArray(payload.board?.board)?payload.board.board.length:0,Object.keys(payload.book||{}).filter(k=>/^\d{4}-\d{2}-\d{2}$/.test(k)).length];
  function exportData(){
   const payload={app:'free-space',version:1,exportedAt:new Date().toISOString(),board:read(boardKey,{}),book:cleanBook(read(bookKey,{})),theme:localStorage.getItem(themeKey)||'light'};
-  const date=new Date().toISOString().slice(0,10),url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'})),a=document.createElement('a');
-  a.href=url;a.download=`free-space-backup-${date}.json`;a.hidden=true;document.body.appendChild(a);a.click();
-  setTimeout(()=>{URL.revokeObjectURL(url);a.remove()},1000);
+  const date=new Date().toISOString().slice(0,10),blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'});
+  if(navigator.msSaveOrOpenBlob){navigator.msSaveOrOpenBlob(blob,`free-space-backup-${date}.json`);return}
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=`free-space-backup-${date}.json`;a.rel='noopener';a.style.cssText='position:fixed;left:-10000px;top:-10000px;width:1px;height:1px;opacity:0';
+  document.body.appendChild(a);
+  a.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));
+  setTimeout(()=>{URL.revokeObjectURL(url);a.remove()},10000);
  }
  function valid(payload){
   return payload&&payload.app==='free-space'&&payload.version===1&&payload.board&&typeof payload.board==='object'&&payload.book&&typeof payload.book==='object'&&(!payload.theme||payload.theme==='light'||payload.theme==='dark')&&JSON.stringify(payload).length<=5*1024*1024;
