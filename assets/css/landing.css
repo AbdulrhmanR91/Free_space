@@ -1,0 +1,35 @@
+:root{--bg:#f3ecdc;--paper:#fbf6e9;--ink:#2b3a55;--mu:#7d786a;--ac:#2f6f5e;--mg:#d98080;--bd:#ddd2b9;--line:#d3dde8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14130f;--paper:#25231d;--ink:#d6e0f2;--mu:#948f7f;--ac:#6fbfa9;--mg:#8a4a4a;--bd:#3d3a30;--line:#34322a}}
+:root[data-theme="dark"]{--bg:#14130f;--paper:#25231d;--ink:#d6e0f2;--mu:#948f7f;--ac:#6fbfa9;--mg:#8a4a4a;--bd:#3d3a30;--line:#34322a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',Tahoma,sans-serif;line-height:1.8}
+.w{max-width:880px;margin:0 auto;padding:0 16px 40px}
+header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:16px 0;border-bottom:1px solid var(--bd)}
+.logo{font:700 26px 'Aref Ruqaa',serif;cursor:pointer;background:none;border:0;color:var(--ink);padding:0}.logo::before{content:'✎ ';color:var(--mg)}
+nav{display:flex;gap:4px;flex-wrap:wrap}nav button{background:none;border:0;border-radius:20px;padding:5px 14px;font:600 14px 'Cairo',sans-serif;color:var(--mu);cursor:pointer}nav button.on{background:var(--ink);color:var(--paper)}
+.pg{padding-top:30px}[hidden]{display:none!important}
+h1,h2,h3{font-family:'Aref Ruqaa',serif;margin:0}.hero{text-align:center;padding:42px 0 24px}.hero-kicker{color:var(--ac);font-weight:700;font-size:14px}.hero h1{font-size:44px;line-height:1.4;margin-top:4px}.hero p{color:var(--mu);font-size:17px;max-width:540px;margin:10px auto 22px}.hero-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.resume{display:flex;justify-content:center;align-items:center;gap:10px;margin:18px auto 0;color:var(--mu);font-size:13px}.resume a{color:var(--ac);font-weight:700;text-decoration:none}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);border:0;border-radius:12px;padding:10px 22px;font:600 15px 'Cairo',sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.22)}.btn.g{background:none;color:var(--ink);border:1px solid var(--bd);box-shadow:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:26px 0}.card{background:var(--paper);border:1px solid var(--bd);border-radius:6px 16px 16px 6px;padding:20px;box-shadow:-4px 4px 0 -1px var(--paper),-4px 4px 0 var(--bd)}.card h3{font-size:26px;margin-bottom:4px}.card p{color:var(--mu);margin:6px 0 14px}.card .ic{font-size:30px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0}.steps li{counter-increment:s;position:relative;padding:8px 52px 8px 0;margin:6px 0}.steps li::before{content:counter(s);position:absolute;right:0;top:6px;width:36px;height:36px;border-radius:50%;border:2px solid var(--mg);display:grid;place-items:center;font:700 18px 'Aref Ruqaa',serif}
+.sec{margin:36px 0 10px}.sec h2{font-size:30px;margin-bottom:6px;text-decoration:underline wavy var(--mg) 1.5px;text-underline-offset:8px}.lead{color:var(--mu);font-size:16px}ul.ft{padding-inline-start:20px}ul.ft li{margin:6px 0}details{background:var(--paper);border:1px solid var(--bd);border-radius:10px;padding:10px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600}.road{display:grid;gap:8px}.road div{background:var(--paper);border:1px dashed var(--bd);border-radius:10px;padding:8px 14px}.road b{color:var(--ac)}footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--bd);color:var(--mu);font-size:13px;text-align:center}
+@media(max-width:600px){
+  .w{padding-inline:12px;padding-bottom:28px}
+  header{align-items:flex-start;padding:12px 0}
+  .logo{font-size:23px}
+  nav{width:100%;justify-content:space-between;gap:2px}
+  nav button{padding:7px 9px;font-size:13px}
+  nav .theme-toggle{padding-inline:8px}
+  .hero{padding-top:26px}
+  .hero h1{font-size:34px;line-height:1.35}
+  .hero p{font-size:15px;line-height:1.9}
+  .hero-actions{gap:10px}
+  .hero-actions .btn{width:100%;padding-block:11px}
+  .cards{grid-template-columns:1fr;margin-top:18px;gap:12px}
+  .card{padding:16px}
+  .sec{margin-top:28px}
+  .sec h2{font-size:27px}
+  .steps li{padding-right:46px}
+  details{padding:9px 12px}
+}

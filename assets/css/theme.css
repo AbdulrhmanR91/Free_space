@@ -1,0 +1,12 @@
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f3ecdc;--card:#fffdf5;--paper:#fbf6e9;--tx:#2b3a55;--ink:#2b3a55;
+  --mu:#7d786a;--ac:#2f6f5e;--acb:#e3f0ec;--mg:#d98080;--bd:#ddd2b9;
+  --line:#d3dde8;--blot:#1d2433;--hole:#b8ac94;--dn:#b4472f;
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#14130f;--card:#25231d;--paper:#25231d;--tx:#d6e0f2;--ink:#cfd9ee;
+  --mu:#948f7f;--ac:#6fbfa9;--acb:#233630;--mg:#8a4a4a;--bd:#46433a;
+  --line:#34322a;--blot:#aebbd6;--hole:#0e0d0a;--dn:#e07a62;
+}
