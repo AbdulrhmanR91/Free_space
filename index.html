@@ -19,9 +19,32 @@
 <script src="assets/js/theme.js"></script>
 </head>
 <body>
+<section class="welcome-screen" id="welcome-screen" aria-labelledby="welcome-title" aria-describedby="welcome-description">
+  <div class="welcome-orbit welcome-orbit-one" aria-hidden="true"></div>
+  <div class="welcome-orbit welcome-orbit-two" aria-hidden="true"></div>
+  <div class="welcome-card">
+    <span class="welcome-kicker">مكان صغير لك</span>
+    <img class="brand-logo welcome-logo brand-logo-light" src="assets/logo/logo-light.svg" alt="مساحة حرة">
+    <img class="brand-logo welcome-logo brand-logo-dark" src="assets/logo/logo-dark.svg" alt="مساحة حرة">
+    <h1 id="welcome-title">قبل ما تبدأ...<br><em>سيب الدنيا برّه</em></h1>
+    <p id="welcome-description">مساحة حرة هي ركن هادي لأفكارك: اكتب اللي في دماغك، اختار حاجة واحدة، واديها وقتها من غير زحمة ولا ضغط.</p>
+    <div class="welcome-path" aria-label="مكونات الموقع">
+      <div><span aria-hidden="true">💡</span><b>فكرة</b><small>اجمعها قبل ما تضيع</small></div>
+      <i aria-hidden="true">←</i>
+      <div><span aria-hidden="true">📓</span><b>تركيز</b><small>حوّلها لخطوة</small></div>
+      <i aria-hidden="true">←</i>
+      <div><span aria-hidden="true">✦</span><b>أثر</b><small>شوف تقدمك بهدوء</small></div>
+    </div>
+    <div class="welcome-actions">
+      <button class="btn welcome-enter" type="button" data-welcome-enter>ادخل مساحتك <span aria-hidden="true">←</span></button>
+      <button class="welcome-skip" type="button" data-welcome-skip>تخطي التعريف</button>
+    </div>
+    <small class="welcome-note">لا حساب. لا إشعارات. مساحتك تفضل مساحتك.</small>
+  </div>
+</section>
 <div class="w">
 <header>
-  <button class="logo" data-p="home">مساحة حرة <span class="beta-label home-beta-label">نسخة تجريبية</span></button>
+  <button class="logo" data-p="home"><img class="brand-logo brand-logo-light" src="assets/logo/logo-light.svg" alt=""><img class="brand-logo brand-logo-dark" src="assets/logo/logo-dark.svg" alt=""><span class="beta-label home-beta-label">نسخة تجريبية</span></button>
   <nav>
     <button data-p="home" class="on">الرئيسية</button>
     <button data-p="book">الكراسة</button>
